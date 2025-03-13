@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; 
+    background: linear-gradient(to right, black 39%, transparent 39%), 
+    url(img_1708767722.png); 
+    background-repeat: no-repeat; 
+    background-repeat: no-repeat; 
+    background-position: center center;
+    background-size: cover; 
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.title{
+    font-family: "Agency FB";
+    font-size: 40px;
+    line-height: 30px;
+    color: white;
+    margin-left: 120px;   
+}
+
+.subtitle{
+    font-family: "Agency FB";
+    font-size: 30px; 
+    color: white;
+}
+
+.contents {
+    font-family: "Agency FB";
+    font-size: 30px;
+    line-height: 30px;
+    color: white;
+    margin-left: 120px;
+}
+
+.footer {
+    font-family: "Agency FB";
+    font-size: 20px;
+    color: white;
+    margin-left: 120px;
+    margin-bottom: 10px;
+    position: fixed;
+    bottom: 0; 
+    left: 0; 
+    width: 100%;  
+    text-align: left; 
+    padding: 10px 0; 
+}
+
+/* スマホ・タブレット対応 */
+@media screen and (max-width: 768px) {
+    body {
+        background-position: center top;  /* 背景画像の位置調整 */
+    }
+
+    .title {
+        font-size: 28px;  /* フォントサイズを小さく */
+        margin-left: 20px;  /* 左マージンを減らす */
+    }
+
+    .subtitle {
+        font-size: 20px;  /* フォントサイズを小さく */
+    }
+
+    .contents {
+        font-size: 30px;  /* フォントサイズを小さく */
+        margin-left: 20px;  /* 左マージンを減らす */
+    }
+
+    .footer {
+        font-size: 20px;  /* フォントサイズを小さく */
+        margin-left: 20px;  /* 左マージンを減らす */
+    }
+}
+
+/* 超小型スクリーン (スマホ) の場合 */
+@media screen and (max-width: 480px) {
+    .title {
+        font-size: 24px;  /* さらにフォントサイズを小さく */
+    }
+
+    .subtitle {
+        font-size: 18px;  /* さらにフォントサイズを小さく */
+    }
+
+    .contents {
+        font-size: 25px;  /* さらにフォントサイズを小さく */
+    }
+
+    .footer {
+        font-size: 18px;  /* さらにフォントサイズを小さく */
+    }
+}
