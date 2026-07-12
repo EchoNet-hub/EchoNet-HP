@@ -36,10 +36,6 @@ body {
     letter-spacing: 0.01em;
 }
 
-.site-title span {
-    display: block;
-}
-
 .main-image {
     display: block;
     width: 100%;
