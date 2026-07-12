@@ -57,17 +57,24 @@ body {
 
 .nav-item {
     display: flex;
+    width: 100%;
     min-width: 0;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     color: #ffffff;
 }
+/* 5つの項目の調整 */
 
 .nav-link {
+    display: block;
+    width: 100%;
     color: #ffffff;
+    text-align: center;
     text-decoration: none;
     white-space: nowrap;
 }
+/* リンクのスタイル */
 
 .nav-link:hover,
 .nav-link:focus-visible {
@@ -81,15 +88,18 @@ body {
 }
 
 .nav-ja {
-    font-size: clamp(18px, 2.1vw, 30px);
+    font-size: clamp(15px, 2.1vw, 25px);
     line-height: 1.45;
 }
+/* 日本語スタイル・サイズ */
 
 .nav-en {
-    margin-top: 3px;
-    font-size: clamp(18px, 2.1vw, 30px);
+    margin-top: 8px;
+    font-size: clamp(15px, 2.1vw, 35px);
     line-height: 1.2;
 }
+/* 英語スタイル・サイズ */
+/* 日本語と英語の間隔 */
 
 .site-footer {
     display: flex;
@@ -102,13 +112,13 @@ body {
 
 .copyright {
     margin: 0;
-    font-size: 20px;
+    font-size: 15px;
     line-height: 1.4;
 }
 
 .contact-link {
     color: #ffffff;
-    font-size: 20px;
+    font-size: 15px;
     line-height: 1.4;
     text-decoration: none;
     white-space: nowrap;
@@ -121,6 +131,8 @@ body {
 
 
 @media screen and (max-width: 768px) {
+/* タブレット優先 */
+
     .site-shell {
         width: min(100% - 28px, 900px);
         padding-top: 20px;
@@ -139,7 +151,7 @@ body {
 
     .nav-ja,
     .nav-en {
-        font-size: clamp(15px, 2.8vw, 23px);
+        font-size: clamp(15px, 2.8vw, 20px);
     }
 
     .site-footer {
@@ -154,6 +166,7 @@ body {
 }
 
 @media screen and (max-width: 480px) {
+/* スマートフォン優先 */
     .site-shell {
         width: calc(100% - 20px);
         padding-top: 20px;
@@ -171,7 +184,7 @@ body {
 
     .nav-ja,
     .nav-en {
-        font-size: 21px;
+        font-size: 20px;
     }
 
     .site-footer {
