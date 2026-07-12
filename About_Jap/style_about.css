@@ -13,17 +13,111 @@ body {
     min-height: 100vh;
     background-color: #000000;
     color: #ffffff;
-    font-family: Arial, "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+    font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
     font-weight: 300;
 }
 
+/* 上部の共通ヘッダー */
+.global-header {
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    width: 100%;
+    background-color: #000000;
+}
+
+.global-header-inner {
+    width: min(900px, calc(100% - 40px));
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+/* HP名 */
+.site-title {
+    display: block;
+    margin: 0 0 8px;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.38;
+    letter-spacing: 0.01em;
+    text-align: center;
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:focus-visible {
+    opacity: 0.7;
+}
+
+/* 5つのメニュー */
+.main-nav {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    column-gap: 12px;
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #000000;
+    border-bottom: 1px solid #ffffff;
+}
+
+.nav-item {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
+}
+
+.nav-link,
+.nav-text {
+    display: block;
+    width: 100%;
+    color: #ffffff;
+    text-align: center;
+    white-space: nowrap;
+    opacity: 0.5;
+}
+
+.nav-link {
+    text-decoration: none;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+    opacity: 1;
+}
+
+.nav-ja,
+.nav-en {
+    font-size: clamp(15px, 2.1vw, 20px);
+    font-weight: 400;
+}
+
+.nav-ja {
+    line-height: 1.45;
+}
+
+.nav-en {
+    margin-top: 8px;
+    line-height: 1.2;
+}
+
+.current-page {
+    opacity: 1;
+}
+
+/* About本文 */
 .about-page {
-    width: min(900px, calc(100% - 80px));
+    width: min(900px, calc(100% - 40px));
     margin: 0 auto;
     padding-top: 35px;
     padding-bottom: 80px;
 }
 
+/* 写真と名前 */
 .profile {
     display: grid;
     grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
@@ -61,6 +155,7 @@ body {
     white-space: nowrap;
 }
 
+/* 研究分野 */
 .research-field {
     margin-top: 90px;
     margin-right: 15px;
@@ -81,10 +176,10 @@ body {
     font-size: 31px;
     font-weight: 300;
     line-height: 1.5;
-    white-space: normal;
     overflow-wrap: anywhere;
 }
 
+/* 経歴 */
 .career {
     margin-top: 95px;
     margin-right: 15px;
@@ -103,8 +198,8 @@ body {
 }
 
 .career-row p {
-    margin: 0;
     min-width: 0;
+    margin: 0;
     font-size: 30px;
     font-weight: 300;
     line-height: 1.45;
@@ -115,13 +210,37 @@ body {
 }
 
 .career-place {
-    white-space: normal;
     overflow-wrap: anywhere;
 }
 
+/* タブレット */
 @media screen and (max-width: 768px) {
+
+    .global-header-inner,
     .about-page {
-        width: calc(100% - 48px);
+        width: min(100% - 28px, 900px);
+    }
+
+    .global-header-inner {
+        padding-top: 20px;
+    }
+
+    .site-title {
+        font-size: 25px;
+    }
+
+    .main-nav {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        column-gap: 6px;
+        padding: 10px 5px;
+    }
+
+    .nav-ja,
+    .nav-en {
+        font-size: clamp(15px, 2.8vw, 20px);
+    }
+
+    .about-page {
         padding-top: 25px;
         padding-bottom: 50px;
     }
@@ -138,11 +257,13 @@ body {
     }
 
     .profile-name h1 {
-        font-size: clamp(30px, 7vw, 45px);
+        font-size: clamp(30px, 6vw, 45px);
+        white-space: normal;
     }
 
     .profile-name p {
         font-size: clamp(18px, 4vw, 25px);
+        white-space: normal;
     }
 
     .research-field,
@@ -178,12 +299,8 @@ body {
     }
 }
 
+/* 写真と名前を縦並びにする */
 @media screen and (max-width: 520px) {
-    .about-page {
-        width: calc(100% - 32px);
-        padding-top: 20px;
-        padding-bottom: 40px;
-    }
 
     .profile {
         grid-template-columns: 1fr;
@@ -234,5 +351,42 @@ body {
 
     .career-place {
         margin-top: 2px;
+    }
+}
+
+/* スマートフォン */
+@media screen and (max-width: 480px) {
+
+    .global-header-inner,
+    .about-page {
+        width: calc(100% - 20px);
+    }
+
+    .global-header-inner {
+        padding-top: 20px;
+    }
+
+    .site-title {
+        font-size: 18px;
+    }
+
+    .main-nav {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        column-gap: 2px;
+        padding: 8px 2px;
+    }
+
+    .nav-ja,
+    .nav-en {
+        font-size: 14px;
+    }
+
+    .nav-en {
+        margin-top: 8px;
+    }
+
+    .about-page {
+        padding-top: 20px;
+        padding-bottom: 40px;
     }
 }
