@@ -117,16 +117,6 @@ body {
     opacity: 0.7;
 }
 
-@media screen and (max-width: 768px) {
-    .site-shell {
-        width: min(100% - 28px, 900px);
-        padding-top: 40px;
-        padding-bottom: 32px;
-    }
-
-    .site-title {
-        font-size: 25px;
-    }
 
 @media screen and (max-width: 768px) {
     .site-shell {
@@ -197,3 +187,4 @@ body {
     .contact-link {
         align-self: flex-end;
     }
+}
