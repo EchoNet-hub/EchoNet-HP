@@ -43,18 +43,29 @@ body {
 .main-image {
     display: block;
     width: 100%;
-    aspect-ratio: 3 / 1.7;
+    margin-top: 15px;
+    aspect-ratio: 3 / 1.9;
     object-fit: cover;
     object-position: right bottom;
 }
 /* メイン画像のスタイル */
 
 .main-nav {
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     column-gap: 12px;
-    padding: 4px 20px 0;
+
+    width: 100%;
+    padding: 12px 20px;
+
+    background-color: #000000;
+    border-bottom: 1px solid #000000;
 }
+/* メインナビゲーションのスタイル */
 
 .nav-item {
     display: flex;
@@ -106,7 +117,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 30px;
+    margin-top: 15px;
     padding: 20px 5px 0;
     border-top: 1px solid #ffffff;
 }
@@ -148,7 +159,7 @@ body {
     .main-nav {
         grid-template-columns: repeat(5, minmax(0, 1fr));
         column-gap: 6px;
-        padding: 8px 5px 0;
+        padding: 10px 5px;
     }
 
     .nav-ja,
@@ -157,7 +168,7 @@ body {
     }
 
     .site-footer {
-        margin-top: 20px;
+        margin-top: 15px;
         padding-top: 18px;
     }
 
@@ -179,10 +190,16 @@ body {
     }
 
     .main-nav {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px 12px;
-        padding: 12px 10px 0;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        column-gap: 2px;
+        padding: 8px 2px;
     }
+
+    .nav-ja,
+    .nav-en {
+        font-size: clamp(10px, 3.3vw, 16px);
+    }
+
 
     .nav-ja,
     .nav-en {
@@ -193,7 +210,7 @@ body {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
-        margin-top: 20px;
+        margin-top: 15px;
     }
 
     .copyright,
