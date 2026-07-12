@@ -1,96 +1,147 @@
 @charset "utf-8";
 
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #000000;
+}
+
 body {
     margin: 0;
-    padding: 0;
-    height: 100vh; 
-    background: linear-gradient(to right, black 39%, transparent 39%), 
-    url(img_1708767722.png); 
-    background-repeat: no-repeat; 
-    background-repeat: no-repeat; 
-    background-position: center center;
-    background-size: cover; 
-    background-attachment: fixed;
-    overflow: hidden;
+    min-height: 100vh;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
 }
 
-.title{
-    font-family: "Agency FB";
-    font-size: 40px;
-    line-height: 30px;
-    color: white;
-    margin-left: 120px;   
+.site-shell {
+    width: min(900px, calc(100% - 40px));
+    margin: 0 auto;
+    padding-top: 96px;
+    padding-bottom: 48px;
 }
 
-.subtitle{
-    font-family: "Agency FB";
-    font-size: 30px; 
-    color: white;
+.site-header {
+    padding-left: 6px;
 }
 
-.contents {
-    font-family: "Agency FB";
+.site-title {
+    margin: 0 0 8px;
     font-size: 30px;
-    line-height: 30px;
-    color: white;
-    margin-left: 120px;
+    font-weight: 400;
+    line-height: 1.38;
+    letter-spacing: 0.01em;
 }
 
-.footer {
-    font-family: "Agency FB";
+.site-title span {
+    display: block;
+}
+
+.main-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+}
+
+.main-nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 3px 20px 0;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-item:hover,
+.nav-item:focus-visible {
+    opacity: 0.7;
+}
+
+.nav-ja,
+.nav-en {
+    display: block;
+    font-weight: 400;
+}
+
+.nav-ja {
+    font-size: 30px;
+    line-height: 1.45;
+}
+
+.nav-en {
+    margin-top: 3px;
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+.site-footer {
+    margin-top: 23px;
+    padding-right: 25px;
+    text-align: right;
+}
+
+.site-footer p {
+    margin: 0;
     font-size: 20px;
-    color: white;
-    margin-left: 120px;
-    margin-bottom: 10px;
-    position: fixed;
-    bottom: 0; 
-    left: 0; 
-    width: 100%;  
-    text-align: left; 
-    padding: 10px 0; 
+    line-height: 1.4;
 }
 
-/* スマホ・タブレット対応 */
 @media screen and (max-width: 768px) {
-    body {
-        background-position: center top;  /* 背景画像の位置調整 */
+    .site-shell {
+        width: min(100% - 28px, 900px);
+        padding-top: 40px;
+        padding-bottom: 32px;
     }
 
-    .title {
-        font-size: 28px;  /* フォントサイズを小さく */
-        margin-left: 20px;  /* 左マージンを減らす */
+    .site-title {
+        font-size: 25px;
     }
 
-    .subtitle {
-        font-size: 20px;  /* フォントサイズを小さく */
+    .main-nav {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px 16px;
+        padding: 10px 10px 0;
     }
 
-    .contents {
-        font-size: 30px;  /* フォントサイズを小さく */
-        margin-left: 20px;  /* 左マージンを減らす */
+    .nav-ja,
+    .nav-en {
+        font-size: 24px;
     }
 
-    .footer {
-        font-size: 20px;  /* フォントサイズを小さく */
-        margin-left: 20px;  /* 左マージンを減らす */
+    .site-footer {
+        margin-top: 28px;
+        padding-right: 10px;
+    }
+
+    .site-footer p {
+        font-size: 16px;
     }
 }
 
-/* 超小型スクリーン (スマホ) の場合 */
 @media screen and (max-width: 480px) {
-    .title {
-        font-size: 24px;  /* さらにフォントサイズを小さく */
+    .site-shell {
+        width: calc(100% - 20px);
+        padding-top: 24px;
     }
 
-    .subtitle {
-        font-size: 18px;  /* さらにフォントサイズを小さく */
+    .site-title {
+        font-size: 21px;
     }
 
-    .contents {
-        font-size: 25px;  /* さらにフォントサイズを小さく */
+    .nav-ja,
+    .nav-en {
+        font-size: 21px;
     }
 
-    .footer {
-        font-size: 18px;  /* さらにフォントサイズを小さく */
+    .site-footer p {
+        font-size: 14px;
     }
 }
