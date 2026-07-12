@@ -19,12 +19,13 @@ body {
 .site-shell {
     width: min(900px, calc(100% - 40px));
     margin: 0 auto;
-    padding-top: 96px;
+    padding-top: 20px;
     padding-bottom: 48px;
 }
 
 .site-header {
-    padding-left: 6px;
+    padding-left: 0;
+    text-align: center;
 }
 
 .site-title {
@@ -44,6 +45,7 @@ body {
     width: 100%;
     aspect-ratio: 3 / 2;
     object-fit: cover;
+    object-position: right center;
 }
 
 .main-nav {
@@ -121,7 +123,7 @@ body {
 @media screen and (max-width: 768px) {
     .site-shell {
         width: min(100% - 28px, 900px);
-        padding-top: 40px;
+        padding-top: 20px;
         padding-bottom: 32px;
     }
 
@@ -154,7 +156,7 @@ body {
 @media screen and (max-width: 480px) {
     .site-shell {
         width: calc(100% - 20px);
-        padding-top: 24px;
+        padding-top: 20px;
     }
 
     .site-title {
