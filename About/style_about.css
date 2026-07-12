@@ -17,9 +17,93 @@ body {
     font-weight: 300;
 }
 
+/* 上部の共通ヘッダー */
+.global-header {
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    width: 100%;
+    background-color: #000000;
+    border-bottom: 1px solid #ffffff;
+}
+
+.global-header-inner,
 .about-page {
-    width: min(900px, calc(100% - 80px));
-    margin: 0 auto;
+    width: min(900px, calc(100% - 40px));
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.site-title {
+    display: block;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: clamp(18px, 2.4vw, 30px);
+    font-weight: 300;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:focus-visible {
+    opacity: 0.7;
+}
+
+/* 5つのメニュー */
+.main-nav {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    column-gap: 12px;
+    width: 100%;
+}
+
+.nav-item {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
+}
+
+.nav-link {
+    display: block;
+    width: 100%;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    opacity: 0.5;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+    opacity: 1;
+}
+
+.nav-ja,
+.nav-en {
+    display: block;
+    width: 100%;
+    font-size: clamp(15px, 2.1vw, 25px);
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.nav-en {
+    margin-top: 7px;
+}
+
+.current-page {
+    opacity: 1;
+}
+
+
+/* About本文 */
+.about-page {
     padding-top: 35px;
     padding-bottom: 80px;
 }
@@ -48,23 +132,14 @@ body {
     font-size: 52px;
     font-weight: 300;
     line-height: 1.3;
-    letter-spacing: 0.13em;
-    white-space: nowrap;
-}
-
-.profile-name p {
-    margin: 4px 0 0;
-    font-size: 29px;
-    font-weight: 300;
-    line-height: 1.4;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.08em;
     white-space: nowrap;
 }
 
 .research-field {
     margin-top: 90px;
-    margin-left: 15px;
     margin-right: 15px;
+    margin-left: 15px;
 }
 
 .research-field h2,
@@ -81,14 +156,13 @@ body {
     font-size: 31px;
     font-weight: 300;
     line-height: 1.5;
-    white-space: normal;
     overflow-wrap: anywhere;
 }
 
 .career {
     margin-top: 95px;
-    margin-left: 15px;
     margin-right: 15px;
+    margin-left: 15px;
 }
 
 .career-list {
@@ -103,8 +177,8 @@ body {
 }
 
 .career-row p {
-    margin: 0;
     min-width: 0;
+    margin: 0;
     font-size: 30px;
     font-weight: 300;
     line-height: 1.45;
@@ -115,13 +189,35 @@ body {
 }
 
 .career-place {
-    white-space: normal;
     overflow-wrap: anywhere;
 }
 
+/* タブレット */
 @media screen and (max-width: 768px) {
+    .global-header-inner,
     .about-page {
-        width: calc(100% - 48px);
+        width: min(100% - 28px, 900px);
+    }
+
+    .site-title {
+        margin-bottom: 8px;
+        font-size: 22px;
+    }
+
+    .main-nav {
+        column-gap: 5px;
+    }
+
+    .nav-ja,
+    .nav-en {
+        font-size: clamp(13px, 2.8vw, 21px);
+    }
+
+    .nav-en {
+        margin-top: 5px;
+    }
+
+    .about-page {
         padding-top: 25px;
         padding-bottom: 50px;
     }
@@ -138,17 +234,14 @@ body {
     }
 
     .profile-name h1 {
-        font-size: clamp(30px, 7vw, 45px);
-    }
-
-    .profile-name p {
-        font-size: clamp(18px, 4vw, 25px);
+        font-size: clamp(30px, 6vw, 45px);
+        white-space: normal;
     }
 
     .research-field,
     .career {
-        margin-left: 0;
         margin-right: 0;
+        margin-left: 0;
     }
 
     .research-field {
@@ -178,9 +271,32 @@ body {
     }
 }
 
+/* スマートフォン */
 @media screen and (max-width: 520px) {
+    .global-header-inner,
     .about-page {
-        width: calc(100% - 32px);
+        width: calc(100% - 20px);
+    }
+
+    .site-title {
+        font-size: 17px;
+    }
+
+    .main-nav {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        column-gap: 2px;
+    }
+
+    .nav-ja,
+    .nav-en {
+        font-size: clamp(10px, 3.2vw, 15px);
+    }
+
+    .nav-en {
+        margin-top: 4px;
+    }
+
+    .about-page {
         padding-top: 20px;
         padding-bottom: 40px;
     }
@@ -203,10 +319,6 @@ body {
 
     .profile-name h1 {
         font-size: 38px;
-    }
-
-    .profile-name p {
-        font-size: 22px;
     }
 
     .research-field,
