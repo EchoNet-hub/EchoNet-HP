@@ -43,9 +43,9 @@ body {
 .main-image {
     display: block;
     width: 100%;
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 3 / 1.7;
     object-fit: cover;
-    object-position: right center;
+    object-position: right bottom;
 }
 
 .main-nav {
@@ -88,14 +88,14 @@ body {
 }
 
 .nav-ja {
-    font-size: clamp(15px, 2.1vw, 25px);
+    font-size: clamp(15px, 2.1vw, 20px);
     line-height: 1.45;
 }
-/* 日本語スタイル・サイズ */
+/* 日本語スタイル・日本語サイズ */
 
 .nav-en {
     margin-top: 8px;
-    font-size: clamp(15px, 2.1vw, 35px);
+    font-size: clamp(15px, 2.1vw, 20px);
     line-height: 1.2;
 }
 /* 英語スタイル・サイズ */
