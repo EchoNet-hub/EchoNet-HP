@@ -23,6 +23,38 @@ body {
     padding-bottom: 48px;
 }
 
+/* 言語切り替え */
+.language-switch {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.language-link {
+    color: #ffffff;
+    text-decoration: none;
+    opacity: 0.6;
+}
+
+.language-link:hover,
+.language-link:focus-visible {
+    opacity: 1;
+}
+
+.current-language {
+    font-weight: 700;
+    opacity: 1;
+}
+
+.language-divider {
+    margin-right: 6px;
+    margin-left: 6px;
+    color: #ffffff;
+}
+
 .site-header {
     padding-left: 0;
     text-align: center;
@@ -138,6 +170,40 @@ body {
 }
 
 
+/* ニュース欄 */
+.news-section {
+    position: relative;
+    margin-top: 35px;
+    padding: 30px 25px 22px;
+    border: 1px solid #ffffff;
+}
+
+.news-title {
+    position: absolute;
+    top: -17px;
+    left: 18px;
+    margin: 0;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: #000000;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.news-list {
+    display: flex;
+    min-height: 155px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.news-item {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
 
 @media screen and (max-width: 768px) {
 /* タブレット優先 */
@@ -174,6 +240,23 @@ body {
     }
 }
 
+
+.language-switch {
+    font-size: 15px;
+}
+
+.news-section {
+    margin-top: 30px;
+    padding: 28px 20px 20px;
+}
+
+.news-title {
+    font-size: 20px;
+}
+
+.news-item {
+    font-size: 16px;
+}
 
 
 @media screen and (max-width: 480px) {
@@ -219,4 +302,30 @@ body {
     .contact-link {
         align-self: flex-end;
     }
+}
+
+
+.language-switch {
+    margin-bottom: 6px;
+    font-size: 13px;
+}
+
+.news-section {
+    margin-top: 25px;
+    padding: 25px 14px 16px;
+}
+
+.news-title {
+    top: -14px;
+    left: 10px;
+    font-size: 17px;
+}
+
+.news-list {
+    min-height: 175px;
+}
+
+.news-item {
+    font-size: 14px;
+    line-height: 1.5;
 }
