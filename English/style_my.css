@@ -1,0 +1,222 @@
+@charset "utf-8";
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #000000;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+}
+
+.site-shell {
+    width: min(900px, calc(100% - 40px));
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 48px;
+}
+
+.site-header {
+    padding-left: 0;
+    text-align: center;
+}
+
+.site-title {
+    margin: 0 0 8px;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.38;
+    letter-spacing: 0.01em;
+}
+
+.main-image {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    aspect-ratio: 3 / 1.9;
+    object-fit: cover;
+    object-position: right bottom;
+}
+/* メイン画像のスタイル */
+
+.main-nav {
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    column-gap: 12px;
+
+    width: 100%;
+    padding: 12px 20px;
+
+    background-color: #000000;
+    border-bottom: 1px solid #ffffff;
+}
+/* メインナビゲーションのスタイル */
+
+.nav-item {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+}
+/* 5つの項目の調整 */
+
+.nav-link {
+    display: block;
+    width: 100%;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+}
+/* リンクのスタイル */
+
+.nav-link:hover,
+.nav-link:focus-visible {
+    opacity: 0.7;
+}
+
+.nav-ja,
+.nav-en {
+    display: block;
+    font-weight: 400;
+}
+
+.nav-ja {
+    font-size: clamp(15px, 2.1vw, 20px);
+    line-height: 1.45;
+}
+/* 日本語スタイル・日本語サイズ */
+
+.nav-en {
+    margin-top: 8px;
+    font-size: clamp(15px, 2.1vw, 20px);
+    line-height: 1.2;
+}
+/* 英語スタイル・サイズ */
+/* 日本語と英語の間隔 */
+
+.site-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+    padding: 5px 5px 0;
+}
+/* フッターのスタイル */
+
+.copyright {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.contact-link {
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 1.4;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.contact-link:hover,
+.contact-link:focus-visible {
+    opacity: 0.7;
+}
+
+
+
+@media screen and (max-width: 768px) {
+/* タブレット優先 */
+
+    .site-shell {
+        width: min(100% - 28px, 900px);
+        padding-top: 20px;
+        padding-bottom: 32px;
+    }
+
+    .site-title {
+        font-size: 25px;
+    }
+
+    .main-nav {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        column-gap: 6px;
+        padding: 10px 5px;
+    }
+
+    .nav-ja,
+    .nav-en {
+        font-size: clamp(15px, 2.8vw, 20px);
+    }
+
+    .site-footer {
+        margin-top: 2px;
+        padding-top: 18px;
+    }
+
+    .copyright,
+    .contact-link {
+        font-size: 16px;
+    }
+}
+
+
+
+@media screen and (max-width: 480px) {
+/* スマートフォン優先 */
+    .site-shell {
+        width: calc(100% - 20px);
+        padding-top: 20px;
+    }
+
+    .site-title {
+        font-size: 18px;
+    }
+
+    .main-nav {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        column-gap: 2px;
+        padding: 8px 2px;
+    }
+
+    .nav-ja,
+    .nav-en {
+        font-size: clamp(10px, 3.3vw, 16px);
+    }
+
+
+    .nav-ja,
+    .nav-en {
+        font-size: 14px;
+    }
+
+    .site-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        margin-top: 2px;
+    }
+
+    .copyright,
+    .contact-link {
+        font-size: 12px;
+    }
+
+    .contact-link {
+        align-self: flex-end;
+    }
+}
