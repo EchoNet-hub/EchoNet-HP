@@ -13,26 +13,55 @@ body {
     min-height: 100vh;
     background-color: #000000;
     color: #ffffff;
-    font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-    font-weight: 300;
+    font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic Medium", "Yu Gothic", sans-serif;
+    font-weight: 400;
 }
 
-/* 上部の共通ヘッダー */
-.global-header {
-    position: sticky;
-    z-index: 1000;
-    top: 0;
-    width: 100%;
-    background-color: #000000;
-}
-
-.global-header-inner {
+/* ページ全体 */
+.about-page {
     width: min(900px, calc(100% - 40px));
     margin: 0 auto;
     padding-top: 20px;
+    padding-bottom: 80px;
+}
+
+/* 言語切り替え */
+.language-switch {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.language-link {
+    color: #ffffff;
+    text-decoration: none;
+    opacity: 0.6;
+}
+
+.language-link:hover,
+.language-link:focus-visible {
+    opacity: 1;
+}
+
+.current-language {
+    font-weight: 700;
+    opacity: 1;
+}
+
+.language-divider {
+    margin-right: 6px;
+    margin-left: 6px;
+    color: #ffffff;
 }
 
 /* HP名 */
+.site-header {
+    text-align: center;
+}
+
 .site-title {
     display: block;
     margin: 0 0 8px;
@@ -41,7 +70,6 @@ body {
     font-weight: 400;
     line-height: 1.38;
     letter-spacing: 0.01em;
-    text-align: center;
     text-decoration: none;
 }
 
@@ -50,8 +78,11 @@ body {
     opacity: 0.7;
 }
 
-/* 5つのメニュー */
+/* メインメニュー */
 .main-nav {
+    position: sticky;
+    z-index: 1000;
+    top: 0;
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     column-gap: 12px;
@@ -65,9 +96,8 @@ body {
     display: flex;
     width: 100%;
     min-width: 0;
-    flex-direction: column;
     align-items: center;
-    color: #ffffff;
+    justify-content: center;
     text-align: center;
 }
 
@@ -76,9 +106,12 @@ body {
     display: block;
     width: 100%;
     color: #ffffff;
+    font-size: clamp(15px, 2.1vw, 20px);
+    font-weight: 400;
+    line-height: 1.45;
     text-align: center;
     white-space: nowrap;
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 .nav-link {
@@ -90,39 +123,17 @@ body {
     opacity: 1;
 }
 
-.nav-ja,
-.nav-en {
-    font-size: clamp(15px, 2.1vw, 20px);
-    font-weight: 400;
-}
-
-.nav-ja {
-    line-height: 1.45;
-}
-
-.nav-en {
-    margin-top: 8px;
-    line-height: 1.2;
-}
-
 .current-page {
     opacity: 1;
 }
 
-/* About本文 */
-.about-page {
-    width: min(900px, calc(100% - 40px));
-    margin: 0 auto;
-    padding-top: 35px;
-    padding-bottom: 80px;
-}
-
-/* 写真と名前 */
+/* プロフィール */
 .profile {
     display: grid;
     grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
     align-items: center;
     column-gap: 80px;
+    padding-top: 35px;
 }
 
 .profile-image {
@@ -131,6 +142,7 @@ body {
     max-width: 320px;
     height: 400px;
     object-fit: cover;
+    object-position: right bottom;
 }
 
 .profile-name {
@@ -140,7 +152,7 @@ body {
 .profile-name h1 {
     margin: 0;
     font-size: 52px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.3;
     letter-spacing: 0.13em;
     white-space: nowrap;
@@ -149,7 +161,7 @@ body {
 .profile-name p {
     margin: 4px 0 0;
     font-size: 29px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.4;
     letter-spacing: 0.12em;
     white-space: nowrap;
@@ -166,7 +178,7 @@ body {
 .career h2 {
     margin: 0;
     font-size: 31px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.4;
 }
 
@@ -174,7 +186,7 @@ body {
     margin: 0;
     max-width: 100%;
     font-size: 31px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.5;
     overflow-wrap: anywhere;
 }
@@ -201,7 +213,7 @@ body {
     min-width: 0;
     margin: 0;
     font-size: 30px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.45;
 }
 
@@ -216,13 +228,14 @@ body {
 /* タブレット */
 @media screen and (max-width: 768px) {
 
-    .global-header-inner,
     .about-page {
-        width: min(100% - 28px, 900px);
+        width: min(calc(100% - 28px), 900px);
+        padding-top: 20px;
+        padding-bottom: 50px;
     }
 
-    .global-header-inner {
-        padding-top: 20px;
+    .language-switch {
+        font-size: 15px;
     }
 
     .site-title {
@@ -230,30 +243,27 @@ body {
     }
 
     .main-nav {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
         column-gap: 6px;
         padding: 10px 5px;
     }
 
-    .nav-ja,
-    .nav-en {
+    .nav-link,
+    .nav-text {
         font-size: clamp(15px, 2.8vw, 20px);
-    }
-
-    .about-page {
-        padding-top: 25px;
-        padding-bottom: 50px;
     }
 
     .profile {
         grid-template-columns: minmax(180px, 42%) minmax(0, 1fr);
         column-gap: 30px;
+        padding-top: 25px;
     }
 
     .profile-image {
         width: 100%;
         height: auto;
         aspect-ratio: 4 / 5;
+        object-fit: cover;
+        object-position: right bottom;
     }
 
     .profile-name h1 {
@@ -299,7 +309,7 @@ body {
     }
 }
 
-/* 写真と名前を縦並びにする */
+/* 縦長スマートフォン */
 @media screen and (max-width: 520px) {
 
     .profile {
@@ -312,6 +322,8 @@ body {
         height: auto;
         margin: 0 auto;
         aspect-ratio: 4 / 5;
+        object-fit: cover;
+        object-position: right bottom;
     }
 
     .profile-name {
@@ -354,16 +366,18 @@ body {
     }
 }
 
-/* スマートフォン */
+/* 小型スマートフォン */
 @media screen and (max-width: 480px) {
 
-    .global-header-inner,
     .about-page {
         width: calc(100% - 20px);
+        padding-top: 20px;
+        padding-bottom: 40px;
     }
 
-    .global-header-inner {
-        padding-top: 20px;
+    .language-switch {
+        margin-bottom: 6px;
+        font-size: 13px;
     }
 
     .site-title {
@@ -371,22 +385,16 @@ body {
     }
 
     .main-nav {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
         column-gap: 2px;
         padding: 8px 2px;
     }
 
-    .nav-ja,
-    .nav-en {
+    .nav-link,
+    .nav-text {
         font-size: 14px;
     }
 
-    .nav-en {
-        margin-top: 8px;
-    }
-
-    .about-page {
+    .profile {
         padding-top: 20px;
-        padding-bottom: 40px;
     }
 }
