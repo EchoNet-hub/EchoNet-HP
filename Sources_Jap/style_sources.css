@@ -167,6 +167,74 @@ body {
     letter-spacing: 0.08em;
 }
 
+
+/* 資料一覧 */
+.sources-directory {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 35px;
+    row-gap: 55px;
+    margin-top: 65px;
+}
+
+.source-category {
+    min-width: 0;
+}
+
+.source-category-title {
+    margin: 0;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.source-tree {
+    margin: 15px 0 0 7px;
+    padding-left: 18px;
+    border-left: 1px solid #888888;
+    list-style: none;
+}
+
+.source-tree li {
+    position: relative;
+    margin-bottom: 12px;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.source-tree li::before {
+    position: absolute;
+    top: 0.85em;
+    left: -18px;
+    width: 12px;
+    border-top: 1px solid #888888;
+    content: "";
+}
+
+/* 資料一覧のタブレット表示 */
+@media screen and (max-width: 768px) {
+    .sources-directory {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 25px;
+        row-gap: 40px;
+        margin-top: 50px;
+    }
+}
+
+/* 資料一覧のスマートフォン表示 */
+@media screen and (max-width: 480px) {
+    .sources-directory {
+        grid-template-columns: 1fr;
+        row-gap: 35px;
+        margin-top: 40px;
+    }
+
+    .source-category-title {
+        font-size: 19px;
+    }
+}
+
+
 /* フッター */
 .site-footer {
     display: flex;
