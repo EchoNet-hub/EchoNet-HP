@@ -171,8 +171,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 35px;
-    padding: 5px 5px 0;
+    margin-top: 80px;
+    padding: 10px 5px 0;
+    border-top: 1px solid #ffffff;
 }
 
 .copyright {
@@ -237,7 +238,7 @@ body {
     }
 
     .site-footer {
-        margin-top: 30px;
+        margin-top: 65px;
     }
 
     .copyright,
@@ -302,8 +303,7 @@ body {
         flex-direction: column;
         align-items: flex-start;
         gap: 5px;
-        margin-top: 25px;
-        padding: 4px 2px 0;
+        margin-top: 55px;
     }
 
     .copyright,
