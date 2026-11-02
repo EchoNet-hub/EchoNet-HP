@@ -170,6 +170,76 @@ body {
     letter-spacing: 0.08em;
 }
 
+
+/* ミナミハンドウイルカの同盟に関する研究 */
+.alliance-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 43%;
+    column-gap: 30px;
+    align-items: stretch;
+    margin-top: 70px;
+}
+
+.alliance-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.alliance-title {
+    margin: 0 0 20px;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.alliance-description {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+.alliance-more {
+    margin: auto 0 0;
+    padding-top: 20px;
+    font-size: 16px;
+    text-align: right;
+}
+
+.alliance-image-box {
+    width: 100%;
+}
+
+.alliance-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* スマートフォン */
+@media screen and (max-width: 600px) {
+    .alliance-section {
+        grid-template-columns: 1fr;
+        row-gap: 25px;
+        margin-top: 50px;
+    }
+
+    .alliance-title {
+        font-size: 20px;
+    }
+
+    .alliance-description {
+        font-size: 16px;
+    }
+
+    .alliance-more {
+        margin-top: 20px;
+    }
+}
+
+
 /* フッター */
 .site-footer {
     display: flex;
