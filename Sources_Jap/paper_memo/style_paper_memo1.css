@@ -151,6 +151,7 @@ body {
     text-align: right;
 }
 
+
 /* 論文メモ */
 .memo-list {
     margin-top: 45px;
@@ -183,15 +184,16 @@ body {
     overflow-wrap: anywhere;
 }
 
-.memo-paper a {
+.memo-paper a,
+.memo-paper a:link,
+.memo-paper a:visited,
+.memo-paper a:hover,
+.memo-paper a:active,
+.memo-paper a:focus-visible {
     color: #ffffff;
     text-decoration: underline;
     text-underline-offset: 4px;
-}
-
-.memo-paper a:hover,
-.memo-paper a:focus-visible {
-    opacity: 0.7;
+    opacity: 1;
 }
 
 .memo-description-title {
@@ -207,6 +209,7 @@ body {
     line-height: 1.9;
     overflow-wrap: anywhere;
 }
+
 
 /* フッター */
 .site-footer {

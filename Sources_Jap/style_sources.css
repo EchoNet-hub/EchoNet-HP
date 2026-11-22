@@ -168,6 +168,7 @@ body {
 }
 
 
+
 /* 資料一覧 */
 .sources-directory {
     display: grid;
@@ -210,6 +211,18 @@ body {
     border-top: 1px solid #888888;
     content: "";
 }
+
+.source-tree a,
+.source-tree a:link,
+.source-tree a:visited,
+.source-tree a:hover,
+.source-tree a:active,
+.source-tree a:focus-visible {
+    color: #ffffff;
+    text-decoration: underline;
+    opacity: 1;
+}
+
 
 /* 資料一覧のタブレット表示 */
 @media screen and (max-width: 768px) {
